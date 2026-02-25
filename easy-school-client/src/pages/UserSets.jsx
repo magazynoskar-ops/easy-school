@@ -11,7 +11,7 @@ const MODES = [
 
 const UserSets = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const [sets, setSets] = useState([]);
   const [selectedSetId, setSelectedSetId] = useState(null);
   const [error, setError] = useState(null);
@@ -27,13 +27,29 @@ const UserSets = () => {
           setError(null);
         }
       } catch (err) {
+        const status = err.response?.status;
+        if (status === 401 && user) {
+          logout();
+          try {
+            const fallbackRes = await api.getPublicSets();
+            if (!ignore) {
+              setSets(fallbackRes.data);
+              setError(null);
+            }
+          } catch (fallbackErr) {
+            if (!ignore) {
+              setError(fallbackErr.response?.data?.message || 'Nie mozna pobrac zestawow');
+            }
+          }
+          return;
+        }
         if (!ignore) setError(err.response?.data?.message || 'Nie mozna pobrac zestawow');
       } finally {
         if (!ignore) setLoading(false);
       }
     })();
     return () => { ignore = true; };
-  }, [user]);
+  }, [user, logout]);
 
   useEffect(() => {
     document.body.style.overflow = selectedSetId ? 'hidden' : '';

@@ -5,9 +5,10 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "start": "node server.js",
     "fix:encoding": "node scripts/fix-polish-encoding.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No server tests configured\""
   },
   "keywords": [],
   "author": "",
@@ -20,5 +21,8 @@
     "jsonwebtoken": "^9.0.3",
     "mongodb": "^7.1.0",
     "nodemailer": "^8.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }

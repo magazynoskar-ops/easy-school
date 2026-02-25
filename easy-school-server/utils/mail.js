@@ -5,10 +5,7 @@ function isTestMode() {
 }
 
 function hasEmailConfig() {
-  return !!(
-    process.env.EMAIL_USER &&
-    process.env.EMAIL_PASS
-  );
+  return !!(process.env.EMAIL_USER && process.env.EMAIL_PASS);
 }
 
 export async function sendVerificationEmail(email, code) {
@@ -33,8 +30,8 @@ export async function sendVerificationEmail(email, code) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Twój kod weryfikacyjny Easy School',
-      html: `<p>Tw&oacute;j kod weryfikacyjny: <strong>${code}</strong></p>`
+      subject: 'Twoj kod weryfikacyjny Easy School',
+      html: `<p>Twoj kod weryfikacyjny: <strong>${code}</strong></p>`
     });
 
     return { ok: true, mode: 'smtp' };

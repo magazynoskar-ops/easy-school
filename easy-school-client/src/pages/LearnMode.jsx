@@ -102,7 +102,7 @@ const LearnMode = () => {
     <main className="page">
       <section className="surface form-card stack-md">
         <h2 className="title">{set.name}</h2>
-        <p className="muted counter-text">Słówka: {score} / {total}</p>
+        <p className="muted counter-text">Slowka: {score} / {total}</p>
         <p className="muted counter-text">Slowo {index + 1} z {total}</p>
 
         <div className="set-tile"><strong>{prompt}</strong></div>

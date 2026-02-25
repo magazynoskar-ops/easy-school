@@ -3,7 +3,7 @@ import cors from 'cors';
 import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 
-// load environment variables early
+// Load environment variables early.
 dotenv.config();
 
 const app = express();
@@ -31,50 +31,43 @@ if (!MONGO_URI) {
   process.exit(1);
 }
 
-// create MongoDB client (no options needed for v7.x)
+// Create MongoDB client (no options needed for mongodb v7.x).
 const client = new MongoClient(MONGO_URI);
 
-// import routers and models so we can init after connection
 import authRoutes from './routes/auth.js';
 import setsRoutes from './routes/sets.js';
 import adminRoutes from './routes/admin.js';
 import { init as initUserModel } from './models/User.js';
 import { init as initSetModel } from './models/Set.js';
 
-// attempt connection once at startup
 async function connectDB() {
   try {
     await client.connect();
-    console.log('Połączenie z bazą MongoDB powiodło się!');
+    console.log('Polaczenie z baza MongoDB powiodlo sie');
 
     const db = client.db();
-    // initialize models with db instance
     initUserModel(db);
     initSetModel(db);
 
-    // mount routes after models initialized
     app.use('/api/auth', authRoutes);
     app.use('/api/sets', setsRoutes);
     app.use('/api/admin', adminRoutes);
 
-    // start server
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
   } catch (err) {
-    console.error('Błąd połączenia:', err);
+    console.error('Blad polaczenia:', err);
     process.exit(1);
   }
 }
 
 connectDB();
 
-// basic health check route
-app.get('/', (req, res) => {
-  res.send('Server działa na porcie ' + PORT);
+app.get('/', (_req, res) => {
+  res.send('Server dziala na porcie ' + PORT);
 });
 
-// test endpoint to verify backend is running
-app.get('/api/test', (req, res) => {
-  res.json({ message: 'Backend API działa poprawnie' });
+app.get('/api/test', (_req, res) => {
+  res.json({ message: 'Backend API dziala poprawnie' });
 });
