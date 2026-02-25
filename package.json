@@ -1,0 +1,14 @@
+{
+  "name": "easy-school",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server": "cd easy-school-server && nodemon server.js",
+    "client": "cd easy-school-client && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  }
+}

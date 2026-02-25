@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+.app-routes {
+  width: 100%;
+}
+
+.with-brand-logo {
+  width: 100%;
+}
+
+.app-font {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+label {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  background: #ffffff url('/bg.png') center center / cover no-repeat fixed;
+  color: #000000;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(1.5px);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #cfd8d1;
+}
+
+.navbar-content {
+  align-items: flex-start;
+}
+
+.brand-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.brand-logo {
+  width: auto;
+  height: 40px;
+  max-height: 40px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.nav-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #1d1d1d;
+}
+
+.nav-actions {
+  margin-left: auto;
+  gap: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu-wrap {
+  position: relative;
+}
+
+.menu-icon-button {
+  border: 0;
+  background: transparent;
+  color: #00d86f;
+  font-size: 0;
+  line-height: 0;
+  font-weight: 400;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-icon-button:hover {
+  color: #00ff8c;
+  transform: translateX(2px);
+}
+
+.menu-panel {
+  top: calc(100% + 0.5rem);
+  min-width: 170px;
+}
+
+.legacy-menu {
+  font-size: 30px;
+  line-height: 1;
+  color: #00d86f;
+}
+
+.legacy-menu:hover {
+  color: #00ff8c;
+  transform: translateX(2px);
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  background: #00ff8c;
+  color: #ffffff;
+  font-weight: 400;
+  box-shadow: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.btn:hover {
+  background: #00ff8c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  filter: saturate(1.02);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #0a8f4e;
+  outline-offset: 1px;
+}
+
+.logout-btn {
+  min-width: 52px;
+  min-height: 44px;
+}
+
+.login-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.set-tile {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.mode-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+.mode-btn {
+  min-height: 48px;
+}
+
+.counter-text {
+  letter-spacing: 0.1px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.menu-icon-button .material-symbols-outlined {
+  font-size: 30px;
+  color: #00d86f;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-icon-button:hover .material-symbols-outlined {
+  color: #00ff8c;
+  transform: translateX(2px);
+}
+
+.mode-tile {
+  border: 1px solid #00c96a;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.9rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.mode-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  border-color: #00ff8c;
+}
+
+.menu-action {
+  border: 0;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: #000000;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #dbe4dd;
+  padding: 1.1rem;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+@media (min-width: 640px) {
+  .mode-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navbar-content {
+    align-items: center;
+  }
+
+  .brand-logo {
+    height: 42px;
+    max-height: 42px;
+  }
+}
