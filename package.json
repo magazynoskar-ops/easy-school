@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "server": "cd easy-school-server && nodemon server.js",
+    "server": "cd easy-school-server && npm server.js",
     "client": "cd easy-school-client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
