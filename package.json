@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "server": "cd easy-school-server && npm server.js",
+    "start": "node easy-school-server/server.js",
     "client": "cd easy-school-client && npm run dev",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"nodemon easy-school-server/server.js\" \"npm run client\""
   },
   "devDependencies": {
     "concurrently": "^8.2.0",
