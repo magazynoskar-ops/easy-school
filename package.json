@@ -1,14 +1,23 @@
 {
   "name": "easy-school",
   "version": "1.0.0",
-  "private": true,
+  "description": "Easy School server",
+  "main": "easy-school-server/server.js",
   "scripts": {
     "start": "node easy-school-server/server.js",
-    "client": "cd easy-school-client && npm run dev",
-    "dev": "concurrently \"nodemon easy-school-server/server.js\" \"npm run client\""
+    "dev": "nodemon easy-school-server/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.0",
-    "nodemon": "^3.0.1"
-  }
+    "nodemon": "^3.1.14"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "",
+  "license": "ISC"
 }
